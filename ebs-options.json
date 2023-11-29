@@ -21,13 +21,13 @@
     }, 
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
-        "OptionName": "INVOICER_POSTGRES_DB", 
+        "OptionName": "aws-elasticbeanstalk-ec2-instans", 
         "Value": "invoicer"
     }, 
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
         "OptionName": "INVOICER_POSTGRES_HOST", 
-        "Value": "POSTGRESHOSTREPLACEME"
+        "Value": "aws-elasticbeanstalk-ec2-instans"
     },
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
