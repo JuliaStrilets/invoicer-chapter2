@@ -240,6 +240,7 @@ func (iv *invoicer) deleteInvoice(w http.ResponseWriter, r *http.Request) {
             func (in *invoicer) getIndex(w http.ResponseWrite, r *http.Request){
 	    w.Header().Add("Content-Security-Policy", "default-src 'self'; child-src 'self;")
      	    w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+	    w.Header().Add("X-Content-Type-Options", "nosniff")
 	    }
 	    <input type="submit" />
         </form>
