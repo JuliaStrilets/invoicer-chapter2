@@ -43,6 +43,11 @@ func main() {
 	)
 	var db *gorm.DB
 	if os.Getenv("INVOICER_USE_POSTGRES") != "" {
+		func main(){
+			escaped := html.EscpeString("<script type='text/javascript'>alert('xss');</script>")
+			fmt.PrintIn(escaped)
+
+		}
 		log.Println("Opening postgres connection")
 		db, err = gorm.Open("postgres", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=%s",
 			os.Getenv("INVOICER_POSTGRES_USER"),
@@ -223,7 +228,11 @@ func (iv *invoicer) getIndex(w http.ResponseWriter, r *http.Request) {
         </form>
         <form id="invoiceDeleter" method="DELETE">
             <label>Delete this invoice</label>
-            <input type="submit" />
+            func (in *invoicer) getIndex(w http.ResponseWrite, r *http.Request){
+	    w.Header().Add("Content-Security-Policy", "default-src 'self'; child-src 'self;")
+     	    w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+	    }
+	    <input type="submit" />
         </form>
     </body>
 </html>`))
